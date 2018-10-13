@@ -57,7 +57,6 @@
 			<div id="left-content">
 				<h:inputText value="#{appointmentController.appointmentSearchInput}"
 					id="startDay" class="datepicker" />
-				<h:message for="startDay" />
 				<h:commandButton value="Search Appointment by Date" styleClass="btn"
 					action="#{appointmentController.searchAppointmentByDate()}">
 					<f:setPropertyActionListener target="#{appointment.startDay}"
