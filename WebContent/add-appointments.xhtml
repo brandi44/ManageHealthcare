@@ -124,7 +124,7 @@
 				<h:outputLabel />
 				
 				
-				<h:commandButton value="Save" styleClass="save"
+				<h:commandButton value="Save" styleClass="save" id="save"
 					action="#{appointmentController.addAppointment(appointment)}">
 					<f:setPropertyActionListener target="#{appointment.patientId}"
 						value="#{patient.id}" />

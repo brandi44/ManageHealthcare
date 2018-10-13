@@ -43,7 +43,7 @@
             							
             	<h:outputLabel>City:</h:outputLabel> <h:inputText value="#{patient.city}" id="city" /> <h:message for="city" />
 				
-				<h:outputLabel /> <h:commandButton value="Save" styleClass="save" action="#{patientController.addPatient(patient)}"/>
+				<h:outputLabel /> <h:commandButton value="Save" id="save" styleClass="save" action="#{patientController.addPatient(patient)}"/>
 			
 			</h:panelGrid>
 		</h:form>
