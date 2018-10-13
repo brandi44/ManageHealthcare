@@ -14,8 +14,6 @@
 
 
 
-
-
 <h:head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -49,7 +47,7 @@
 				<h:outputLabel>Patient ID: </h:outputLabel>
 				<h:inputText value="#{patient.id}" id="patientId"
 					onclick="selectPatientMessage()" />
-				<h:commandButton type="submit" value="Select Patient"
+				<h:commandButton type="submit" id="submit" value="Select Patient"
 					action="select-patient.xhtml" />
 
 				<h:outputLabel>First Name:</h:outputLabel>
@@ -142,7 +140,6 @@
 			<h:outputLink value="list-appointments.xhtml">Back to List</h:outputLink>
 		</p>
 	</div>
-
 
 
 	<script>
