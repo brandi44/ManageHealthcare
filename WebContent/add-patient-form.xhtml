@@ -12,10 +12,21 @@
 	
 	<h:outputStylesheet library="css" name="style.css"  />
 	<h:outputStylesheet library="css" name="add-style.css"  />
+	<h:outputScript library="js" name="Validation.js" />
 	
 </h:head>
 
 <h:body>
+
+<script type="text/javascript">
+
+
+
+
+</script>
+
+
+
 
 	<div id="wrapper">
 		<div id="header">
@@ -27,31 +38,30 @@
 		<h3>Add Patient</h3>
 
 		<h:messages globalOnly="true" />
-
-		<h:form id="form" style="margin-top: 10px;" >
-			<h:panelGrid columns="3">
+	
+		<h:form id="form" style="margin-top: 10px;" onsubmit="return checkallfields();"  >
+			<h:panelGrid columns="4" layout="grid">
 			
-				<h:outputLabel>First Name:</h:outputLabel> <h:inputText value="#{patient.firstName}" id="firstName" /> <h:message for="firstName" />
-	
-				<h:outputLabel>Last Name:</h:outputLabel> <h:inputText value="#{patient.lastName}" id="lastName" /> <h:message for="lastName" />
+				<h:outputLabel>First Name:</h:outputLabel> <h:inputText value="#{patient.firstName}" id="firstName" /> <h:outputText value = "" id="firstnamemessage"/>  <h:message for="firstName" /> 
 				
-				<h:outputLabel>Phone Number:</h:outputLabel> <h:inputText value="#{patient.mobilephonenumber}" id="mobilephonenumber" /> <h:message for="mobilephonenumber" />
+				<h:outputLabel>Last Name:</h:outputLabel> <h:inputText value="#{patient.lastName}" id="lastName" /><h:outputText value = "" id="lastnamemessage"/>  <h:message for="lastName" />
+				
+				<h:outputLabel>Phone Number:</h:outputLabel> <h:inputText value="#{patient.mobilephonenumber}" id="mobilephonenumber" /> <h:outputText value = "" id="phonenumbermessage"/> <h:message for="mobilephonenumber" />
 	
-				<h:outputLabel>Email:</h:outputLabel> <h:inputText value="#{patient.email}" id="email" 
-									required="true"
-            							requiredMessage="Your email is mandatory."/> 	<h:message for="email" />
+				<h:outputLabel>Email:</h:outputLabel> <h:inputText value="#{patient.email}" id="email" />  <h:outputText value = "" id="emailmessage"/>	<h:message for="email" />
             							
-            	<h:outputLabel>City:</h:outputLabel> <h:inputText value="#{patient.city}" id="city" /> <h:message for="city" />
+            	<h:outputLabel>City:</h:outputLabel> <h:inputText value="#{patient.city}" id="city" /> <h:outputText value = "" id="citymessage"/> <h:message for="city" />
 				
-				<h:outputLabel /> <h:commandButton value="Save" id="save" styleClass="save" action="#{patientController.addPatient(patient)}"/>
-			
+				<h:outputLabel /> 
+				<h:commandButton value="Save" id="save" styleClass="save" action="#{patientController.addPatient(patient)}"  />
 			</h:panelGrid>
 		</h:form>
 
 		<div style="clear: both;"></div>
 
 		<p><h:outputLink value="list-patients.xhtml">Back to List</h:outputLink></p>
-
+		
+		
 	</div>	
 </h:body>
 </html>
